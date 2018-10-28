@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+author=sandeep
+"""
+class student:        
+    def __init__(self, name, branch, collage, total_marks):
+        self.name=name
+        self.branch=branch
+        self.collage=collage
+        self.total_marks=total_marks
+    def access_data(self):
+        print("student name: " + self.name + "\n branch: " + self.branch + "\n collage: " + self.collage + "\ntotal marks until last sem: " + self.total_marks )
+
+s1=student("sandy", "ECE","MIT", "61 %" )   #student's data
+s2=student("john","ECE","MIT", "72 %")
+s3=student("tom","ECE","MIT", "68 %")
+
+d={"sandy" : 737 , "john" :721}    #dictionary use as username and password
+
+username=input("enter user name (case Sensetive) \n")
+password=int(input("now enter your passwords \n"))
+count=1
+
+for q,w in d.items():   
+    if username==q and password==w and count==1:
+        s1.access_data()
+        break
+    if username==q and password==w and count==2:
+        s2.access_data()
+        break
+    if username!=q and password!=w:
+        print("wrong credentials")
+    else:   
+        count+=1                                      #problem is how to show error if both conditions 
+
+    
