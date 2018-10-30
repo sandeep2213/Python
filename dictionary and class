@@ -15,22 +15,25 @@ s1=student("sandy", "ECE","MIT", "61 %" )   #student's data
 s2=student("john","ECE","MIT", "72 %")
 s3=student("tom","ECE","MIT", "68 %")
 
-d={"sandy" : 737 , "john" :721}    #dictionary use as username and password
+d={"sandy" : 737 , "john" :721, "bob":721}    #dictionary use as username and password
 
 username=input("enter user name (case Sensetive) \n")
 password=int(input("now enter your passwords \n"))
-count=1
+count=len(d)
 
 for q,w in d.items():   
-    if username==q and password==w and count==1:
+    if username==q and password==w and count==3:
         s1.access_data()
         break
-    if username==q and password==w and count==2:
+    elif username==q and password==w and count==2:
         s2.access_data()
         break
-    if username!=q and password!=w:
-        print("wrong credentials")
+    elif username==q and password==w and count==1:
+        s2.access_data()
+        break
     else:   
-        count+=1                                      #problem is how to show error if both conditions 
-
-    
+        count-=1                                     
+if count==0:
+print ("wrong credentials")
+else :
+print("  Good-bye  ")
